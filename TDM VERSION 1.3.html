@@ -1,0 +1,260 @@
+
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Data Extraction Simulator</title> 
+    <style> 
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f0f0f0; 
+        } 
+
+        .game-container { 
+            width: 80%; 
+            margin: 40px auto; 
+            text-align: center; 
+            background-color: #fff; 
+            padding: 20px; 
+            border: 1px solid #ddd; 
+            border-radius: 10px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        } 
+
+        .difficulty-level { 
+            margin-bottom: 20px; 
+        } 
+
+        #code-generator { 
+            background-color: #4CAF50; 
+            color: #fff; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+        } 
+
+        #code-generator:hover { 
+            background-color: #3e8e41; 
+        } 
+
+        #stop-search { 
+            background-color: #FF0000; 
+            color: #fff; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            display: none; 
+        } 
+
+        #stop-search:hover { 
+            background-color: #CC0000; 
+        } 
+
+        .code-display { 
+            margin-top: 20px; 
+        } 
+
+        #code { 
+            font-size: 24px; 
+            font-weight: bold; 
+            color: #333; 
+        } 
+
+        #reward { 
+            font-size: 18px; 
+            color: #666; 
+        } 
+
+        .total-earned { 
+            margin-top: 20px; 
+        } 
+
+        #total { 
+            font-size: 24px; 
+            font-weight: bold; 
+            color: #333; 
+        } 
+
+        .withdrawal-code { 
+            margin-top: 20px; 
+        } 
+
+        #withdrawal-code, #encoded-code { 
+            font-size: 18px; 
+            color: #666; 
+        } 
+
+        .advertisement { 
+            margin-top: 20px; 
+            padding: 10px; 
+            border: 1px solid #ddd; 
+            border-radius: 10px; 
+            background-color: #f9f9f9; 
+        } 
+
+        #advert-text { 
+            font-size: 16px; 
+            color: #666; 
+        } 
+
+        #advert-link { 
+            background-color: #4CAF50; 
+            color: #fff; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+        } 
+
+        #advert-link:hover { 
+            background-color: #3e8e41; 
+        } 
+
+        #advertise-here { 
+            background-color: #FF0000; 
+            color: #fff; 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+        } 
+
+        #advertise-here:hover { 
+            background-color: #CC0000; 
+        } 
+
+        .news-banner { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            background-color: #333; 
+            color: #fff; 
+            padding: 10px; 
+            text-align: center; 
+            white-space: nowrap; 
+            overflow: hidden; 
+        } 
+
+        .news-banner span { 
+            display: inline-block; 
+            width: 500%; 
+            position: relative; 
+            animation: news-banner 56s linear infinite; 
+        } 
+
+        @keyframes news-banner { 
+            0% { 
+                transform: translateX(100%); 
+            } 
+            100% { 
+                transform: translateX(-100%); 
+            } 
+        } 
+    </style> 
+</head> 
+<body> 
+    <div class="game-container"> 
+        <h1>08REX-DATA FILES</h1> 
+        <p id="torn dollar extractor 08rex.01seconds#"></p> 
+        <div class="difficulty-level"> 
+            <p>Difficulty Level: <span id="difficulty">Low</span></p> 
+            <p id="next-difficulty"></p> 
+            <p id="next-difficulty-time"></p> 
+        </div> 
+        <button id="code-generator" class="btn">Activate Data Search</button> 
+        <button id="stop-search" class="btn">Stop Data Search</button> 
+        <div class="code-display"> 
+            <p id="code"></p> 
+            <p id="reward"></p> 
+        </div> 
+        <div class="total-earned"> 
+            <p>Total Earned: $<span id="total">0</span></p> 
+        </div> 
+        <div class="withdrawal-code"> 
+            <p id="withdrawal-code"></p> 
+            <p id="encoded-code"></p> 
+        </div> 
+        <div class="advertisement"> 
+            <p id="advert-text">BLOOD HOODS FACTION - We are a waring faction seeking for warriors!!: <a href="https://www.torn.com/factions.php?step=profile&ID=52275&referredFrom=3194108#/" target="_blank">_-REXXII-_[319418]</a></p> 
+            <button id="advert-link" onclick="window.open('https://www.torn.com/factions.php?step=profile&ID=52275&referredFrom=3194108#/', '_blank')">Visit Sponser</button> 
+            <button id="advertise-here" onclick=window.open(https://www.torn.com/profiles.php?XID=3194108)">Advertise Here</button> 
+        </div> 
+    </div> 
+    <div class="news-banner"> 
+        <span id="news-banner-text">grand entrance! advertise you torn hustle here for only 1 million torn dollars for a month, inbox _-REXXII-_[319418] in torn city. | Want to become a millionaire?.. i mean multi millionare??.. come join the blood hoods faction we are always looking. | Advertise your torn hustle here and let it get seen by the many who come here! | You have to be a torn player to get torn dollars | did you know that it took me for ever to get tho banner working. | best money for watching ads sceme ever. you can even turn it off. | </span> 
+    </div> 
+    <script> 
+        let difficulty = 'Low', 
+            reward = 0, 
+            totalEarned = 0, 
+            autoSearch = false, 
+            searchIntervalId, 
+            difficultyIntervalId; 
+        const difficulties = ['Low', 'Low', 'Low', 'Low', 'Low', 'Medium', 'High']; 
+        let currentDifficultyIndex = 0, 
+            nextDifficultyTime = 20; 
+        document.getElementById('code-generator').addEventListener('click', () => { 
+            autoSearch = true; 
+            document.getElementById('code-generator').style.display = 'none'; 
+            document.getElementById('stop-search').style.display = 'inline-block'; 
+            searchIntervalId = setInterval(searchCode, 1000); 
+            difficultyIntervalId = setInterval(updateDifficulty, 1000); 
+        }); 
+        document.getElementById('stop-search').addEventListener('click', () => { 
+            autoSearch = false; 
+            document.getElementById('code-generator').style.display = 'inline-block'; 
+            document.getElementById('stop-search').style.display = 'none'; 
+            clearInterval(searchIntervalId); 
+            clearInterval(difficultyIntervalId); 
+        }); 
+        document.getElementById('advertise-here').addEventListener('click', () => { 
+            // Add code to handle advertise here button click 
+            alert('advertising here costs 7 million torn dollars. inbox _-REXXII-_[319418] in torn city for a personalized qoute'); 
+        }); 
+        function searchCode() { 
+            const code = Math.random().toString(36).substr(2, 10); 
+            document.getElementById('code').textContent = `data file: ${code}`; 
+            if (Math.random() < 0.9) reward = (Math.random() * 15.00501).toFixed(5); 
+            else if (difficulty === 'Low') reward = (Math.random() * 25.01001).toFixed(5); 
+            else if (difficulty === 'Medium') reward = Math.floor(Math.random() * 50) + 1; 
+            else if (difficulty === 'High') reward = Math.floor(Math.random() * 100) + 1; 
+            totalEarned += parseFloat(reward); 
+            document.getElementById('total').textContent = totalEarned.toFixed(5); 
+            document.getElementById('reward').textContent = `found: $${reward}`; 
+            updateWithdrawalCode(); 
+        } 
+        function updateDifficulty() { 
+            nextDifficultyTime--; 
+            document.getElementById('next-difficulty-time').textContent = `Next Difficulty in: ${nextDifficultyTime} seconds`; 
+            if (nextDifficultyTime === 0) { 
+                currentDifficultyIndex = (currentDifficultyIndex + 1) % difficulties.length; 
+                difficulty = difficulties[currentDifficultyIndex]; 
+                document.getElementById('difficulty').textContent = difficulty; 
+                document.getElementById('next-difficulty').textContent = `stability: ${difficulties[(currentDifficultyIndex + 1) % difficulties.length]}`;              
+                nextDifficultyTime = 20; 
+            } 
+            updateWithdrawalCode(); 
+        } 
+        function updateWithdrawalCode() { 
+            const date = new Date(); 
+            const adjustedTotalEarned = totalEarned / 3; 
+            const code = `shell${adjustedTotalEarned.toFixed(2)}${date.getDate()}${date.getMonth() + 1}${date.getFullYear()}${date.getHours()}${date.getMinutes()}`; 
+            document.getElementById('withdrawal-code').textContent = `Withdrawal Code: ${code}`; 
+            // Encode the amount for staff 
+            const encodedAmount = encodeAmount(adjustedTotalEarned); 
+            document.getElementById('encoded-code').textContent = `Withdrawal Encode ${encodedAmount}`; 
+        } 
+        function encodeAmount(amount) { 
+            // Simple math problem to decode 
+            const multiplier = Math.floor(Math.random() * 10) + 1; 
+            const encodedAmount = amount * multiplier; 
+            return `${encodedAmount} / ${multiplier}`; 
+        } 
+    </script> 
+</body> 
+</html>
+How it works - There are 50 million 08REX data file codes which all unequally hold 50 million torn dollars. A data file is validated and provides its rewards ($0 to $100) a second in a shell code which is verified by the encode. if legit rexxii manually sends the funds to your torn bank account. do not press any extarnal links without saving withdrawal codes.
